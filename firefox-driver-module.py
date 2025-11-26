@@ -35,18 +35,16 @@ def install_executable_files_windows():
         print("exiting!")
     
 def install_executable_files_linux():
-    command = input("Would you like to get files to manually install required version of firefox within your downlaods directory? (y/n):")
+    command = input("The following will display required commands to install firefox & geckodriver on linux would you like them to be displayed? (y/n):")
     if command == "y":
-        command = input("Are you sure you want them installed within your downloads directory? (y/n): ")
+        command = input("Are you sure? (y/n): ")
         if command == "y":
-            options_binary_location = windows_binary
-            gecko_service = Service(windows_geckodriver)
-            download_driver = webdriver.Firefox(service=gecko_service,options=options_binary_location)
-            download_driver.get("https://snapcraft.io/?_gl=1*1vkfx1b*_gcl_au*MTYzNzA3NDIzOS4xNzYwMTE3MTAy*_ga*NTIxMDQzNzYxLjE3NjAxMTcwOTk.*_ga_5LTL1CNEJM*czE3NjQwOTI2MjQkbzgkZzEkdDE3NjQwOTI2MjQkajYwJGwwJGgw")
-            time.sleep(5)
-            download_driver.find_element(by=By.XPATH,value="/html/body/dialog/div/div/div/p[4]/button[2]").click()
-            time.sleep(3)
-            download_driver.find_element(by=By.XPATH,value="/html/body/dialog/div/div/button").click()
+            print("!!!ONLY USE THE COMMANDS APPLICABLE TO YOUR DISTRO!!!")
+            print("Debian commands (apt): sudo apt install snapd && sudo snap install firefox")
+            print("Dedora commands (dnf): sudo dnf install snapd && sudo snap install firefox")
+            print("Open Suse commands (zypper): sudo zypper install snapd && sudo snap install firefox")
+            print("Arch commands (pacman): sudo pacman -S snapd && sudo snap install firefox")
+            print("Gentoo commands (portage): Sorry available at the moment!")
         else:
             print("existing!")
     else:
@@ -69,9 +67,10 @@ def linux_firefox_driver():
         firefox_driver = webdriver.Firefox(service=gecko_service,options=options_binary_location)
     else:
         print("Error snap required!")
-        
+        install_executable_files_linux()
     
 def mac_firefox_driver():
+    print("Your platform is not supported yet!")
 
 #if system
 if platform.system() == "Windows!":
@@ -80,5 +79,6 @@ if platform.system() == "Windows!":
 elif platform.system() == "Linux!":
     linux_firefox_driver()
 elif platform.system() == "Mac!"
+    mac_firefox_driver()
 else:
     print("Error Unsupported System!")
