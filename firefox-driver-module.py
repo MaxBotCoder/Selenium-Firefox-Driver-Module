@@ -51,6 +51,7 @@ def install_executable_files_linux():
         print("existing!")
     
 def windows_firefox_driver():
+    options_binary_location = Options()
     options_binary_location = windows_binary
     gecko_service = Service(windows_geckodriver)
     if os.path.exists(windows_binary):
@@ -60,6 +61,7 @@ def windows_firefox_driver():
         install_executable_files_windows()
     
 def linux_firefox_driver():
+    options_binary_location = Options()
     options_binary_location = linux_binary
     gecko_service = Service(linux_geckodriver)
     if os.path.exists(linux_binary):
