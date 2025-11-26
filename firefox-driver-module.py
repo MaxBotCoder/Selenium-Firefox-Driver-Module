@@ -52,7 +52,7 @@ def install_executable_files_linux():
     
 def windows_firefox_driver():
     options_binary_location = Options()
-    options_binary_location = windows_binary
+    options_binary_location.binary_location = windows_binary
     gecko_service = Service(windows_geckodriver)
     if os.path.exists(windows_binary):
         print("Executable detected!")
@@ -62,7 +62,7 @@ def windows_firefox_driver():
     
 def linux_firefox_driver():
     options_binary_location = Options()
-    options_binary_location = linux_binary
+    options_binary_location.binary_location = linux_binary
     gecko_service = Service(linux_geckodriver)
     if os.path.exists(linux_binary):
         print("Snap Detected!")
