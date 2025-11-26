@@ -9,7 +9,7 @@ from selenium.webdriver.firefox.service import Service
 #variables
 windows_binary = "C:\Program Files\Mozilla Firefox\\"
 linux_binary = "/snap/firefox/7355/usr/lib/firefox/firefox"
-mac_bianry = ""
+mac_bianry = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
     
 windows_geckodriver = ""
 linux_geckodriver = "/snap/firefox/7355/usr/lib/firefox/geckodriver"
@@ -21,14 +21,21 @@ def install_executable_files_windows():
     if command == "y":
         command = input("Again are you sure the files will be put in the DOWNLOADS directory for you to manully install? (y/n):")
         if command == "y":
-            options_binary_location = windows_binary
+            options_binary_location = Options()
+            options_binary_location.binary_location = windows_binary
             gecko_service = Service(windows_geckodriver)
             download_driver = webdriver.Firefox(service=gecko_service,options=options_binary_location)
             download_driver.get("https://www.firefox.com/en-CA/download/all/desktop-release/win64/en-CA/")
-            time.sleep(10)
+            time.sleep(5)
             download_driver.find_element("/html/body/div[2]/main/div/div/div[2]/div/p/a").click()
-            time.sleep(10)
+            time.sleep(5)
             download_driver.get("https://github.com/mozilla/geckodriver")
+            time.sleep(5)
+            download_driver.find_element(by=By.XPATH, value='//*[@id=":R75ab:"]').click
+            time.sleep(0.5)
+            download_driver.find_element(by=By.XPATH, value='//*[@id=":r2o:"]').click()
+            time.sleep(45)
+            download_driver.quit()
         else:
             print("exiting!")
     else:
@@ -55,7 +62,21 @@ def install_executable_files_mac():
     if command == "y":
         command = input("Are you sure they will ONLY be downloaded in the DOWNLOADS directory? (y/n): ")
         if command == y:
-            
+            options_binary_location = Options()
+            options_binary_location.binary_location = mac_binary
+            gecko_service = Service(mac_geckodriver)
+            download_driver = webdriver.Firefox(service=gecko_service,options=options_binary_location)
+            download_driver.get("https://www.firefox.com/en-US/browsers/desktop/mac/")
+            time.sleep(5)
+            download_driver.find_element(by=By.XPATH, value='//*[@id="download-button-desktop-release-osx"]').click()
+            time.sleep(5)
+            download_driver.get("https://github.com/mozilla/geckodriver")
+            time.sleep(5)
+            download_driver.find_element(by=By.XPATH, value='//*[@id=":R75ab:"]').click()
+            time.sleep(0.5)
+            download_driver.find_element(by=By.XPATH, value='//*[@id=":r2o:"]').click()
+            time.sleep(45)
+            download_driver.quit()
         else:
             print("exiting!")
     else:
