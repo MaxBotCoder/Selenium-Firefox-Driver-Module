@@ -73,12 +73,12 @@ def mac_firefox_driver():
     print("Your platform is not supported yet!")
 
 #if system
-if platform.system() == "Windows!":
+if platform.system() == "Windows":
     print("Warning windows may require manual gecko driver and may also require .exe installation of firefox too MICROSOFT STORE FIREFOX IS NOT RECOMMENDED! \n")
     windows_binary = input("Please enter gecko driver location: ")
-elif platform.system() == "Linux!":
+elif platform.system() == "Linux":
     linux_firefox_driver()
-elif platform.system() == "Mac!"
+elif platform.system() == "Mac":
     mac_firefox_driver()
 else:
     print("Error Unsupported System!")
