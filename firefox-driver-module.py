@@ -7,13 +7,13 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
 #variables
-    windows_binary = "C:\Program Files\Mozilla Firefox\"
-    linux_binary = "/snap/firefox/7355/usr/lib/firefox/firefox"
-    mac_bianry = ""
+windows_binary = "C:\Program Files\Mozilla Firefox\\"
+linux_binary = "/snap/firefox/7355/usr/lib/firefox/firefox"
+mac_bianry = ""
     
-    windows_geckodriver = ""
-    linux_geckodriver = "/snap/firefox/7355/usr/lib/firefox/geckodriver"
-    mac_geckodriver = ""
+windows_geckodriver = ""
+linux_geckodriver = "/snap/firefox/7355/usr/lib/firefox/geckodriver"
+mac_geckodriver = ""
 
 #functions
 def install_executable_files_windows():
@@ -39,7 +39,7 @@ def install_executable_files_linux():
     if command == "y":
         command = input("Are you sure? (y/n): ")
         if command == "y":
-            print("!!!ONLY USE THE COMMANDS APPLICABLE TO YOUR DISTRO!!!")
+            print("!!!ONLY USE THE COMMANDS APPLICABLE TO YOUR DISTRO!!! \n")
             print("Debian commands (apt): sudo apt install snapd && sudo snap install firefox")
             print("Dedora commands (dnf): sudo dnf install snapd && sudo snap install firefox")
             print("Open Suse commands (zypper): sudo zypper install snapd && sudo snap install firefox")
@@ -53,7 +53,7 @@ def install_executable_files_linux():
 def windows_firefox_driver():
     options_binary_location = windows_binary
     gecko_service = Service(windows_geckodriver)
-    if os.path.exists(windows_binary) and os.path.exists()windows_geckodriver:
+    if os.path.exists(windows_binary):
         print("Executable detected!")
         windows_driver = webdriver.Firefox(service=gecko_service,options=options_binary_location)
     else:
