@@ -1,1 +1,1 @@
-print("Root access is necessary!")
+print("Root access is required to install dependencies!")
