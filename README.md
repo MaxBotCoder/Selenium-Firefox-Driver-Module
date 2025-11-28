@@ -1,6 +1,13 @@
+Welcome to Selenium Firefox Driver Module!
+
 REQUIRES PYTHON3 & SELENIUM WEBDRIVER INSTALLED!
 
-Welcome to Selenium Firefox Driver Modules's github page!
+How do you use the Firefox Driver Module you may ask?
+
+Its simple really all you need to do is:
+
+Step
+
 
 The goal of this project is to create an easy and simple solution to enabling selenium on firefox!
 
