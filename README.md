@@ -4,10 +4,8 @@ REQUIRES PYTHON3 & SELENIUM WEBDRIVER INSTALLED!
 
 How do you use the Firefox Driver Module you may ask?
 
-Its simple really all you need to do is:
-
-Step
-
+Step1: from fx_driver_module import FXwebdriver
+Step2: FXwebdriver
 
 The goal of this project is to create an easy and simple solution to enabling selenium on firefox!
 
