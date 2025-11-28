@@ -6,8 +6,8 @@ How do you use the Firefox Driver Module you may ask?
 
 (WARNING NOT YET FIT FOR USE)
 
-Version 1.0: Module Prototype has been released! 
+Version 0.1(ALPHA): Module Prototype has been released! 
 
-Version 1.1: Unix .sh installation support has been added!
+Version 0.2(ALPHA): Unix .sh installation support has been added!
 
-Version 1.2: Windows .cmd installation support has been added! 
+Version 0.3(ALPHA): Windows .cmd installation support has been added! 
